@@ -9,6 +9,7 @@ import together from './assets/together.png'
 import Whyus from './components/Whyus'
 import imagee from './assets/imagee.jpg'
 import Footer from './components/Footer'
+import  Accordion  from './components/Accordino'
 function App() {
   return(
     <>
@@ -56,9 +57,11 @@ function App() {
     </div>
 
     <div className='bg-[#EFEAE3] pt-20'>
-     <h2 className='flex justify-center text-4xl font-semibold font-serif pt-6 tracking-wide'>Our Values</h2>
+     <h2 className='flex justify-center text-4xl font-semibold font-serif pt-6 tracking-wide pb-8'>Why Us</h2>
+     <Accordion/>
     </div>
-    <Whyus/>
+    {/* <Whyus/> */}
+  
     <Footer/>
     </>
   )
