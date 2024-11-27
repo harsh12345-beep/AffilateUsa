@@ -1,35 +1,46 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import ScrollSmoother from 'gsap/ScrollSmoother';
 
-const SmoothScrollComponent = () => {
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+const SmoothScrollProvider = ({ children }) => {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from('.scroll-element', {
-      scrollTrigger: {
-        trigger: '.scroll-element',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-      opacity: 0,
-      y: 100,
+    // Initialize ScrollSmoother for all devices, including mobile
+    const smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.5, // Adjust for smoothness (1 = normal speed)
+      effects: true, // Enable effects for ScrollTrigger animations
     });
-  }, []); // Empty dependency array ensures it runs only once
+
+    // Fade-in animation for elements with the class 'fade-in'
+    gsap.utils.toArray('.fade-in').forEach((element) => {
+      gsap.from(element, {
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom", // Start animation when element enters the viewport
+          end: "top center", // End animation closer to the center
+          scrub: true, // Smooth animation synced with scrolling
+        },
+        opacity: 0, // Start completely transparent
+        y: 100, // Start slightly below its final position
+      });
+    });
+
+    return () => {
+      // Cleanup on unmount
+      smoother.kill(); // Remove ScrollSmoother instance
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Cleanup ScrollTriggers
+    };
+  }, []);
 
   return (
-    <div>
-      <section className="scroll-element">
-        <h2>Section 1</h2>
-        <p>This section animates on scroll.</p>
-      </section>
-      <section className="scroll-element">
-        <h2>Section 2</h2>
-        <p>This section also animates on scroll.</p>
-      </section>
+    <div id="smooth-wrapper" className="relative overflow-hidden">
+      <div id="smooth-content">{children}</div>
     </div>
   );
 };
 
-export default SmoothScrollComponent;
+export default SmoothScrollProvider;
