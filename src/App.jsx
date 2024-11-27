@@ -8,11 +8,13 @@ import together from './assets/together.png';
 import Footer from './components/Footer';
 import Accordion from './components/Accordino';
 import imagee from './assets/imagee.jpg';
+import TopBar from './components/TopBar';
 
 function App() {
   return (
 
         <>
+        <TopBar/>
         <Navbar className="fade-in"/>
         <HeroSection className="fade-in"/>
         <div className="fade-in flex flex-col sm:flex-row bg-gray-100 justify-between items-center sm:px-8 px-4 py-6">

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TopBar = ({ onLanguageChange, currentLanguage }) => {
+const TopBar = () => {
   const languages = ['English', 'Español', 'Français', 'Deutsch', 'हिन्दी'];
 
   return (
