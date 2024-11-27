@@ -7,7 +7,7 @@ import car from './assets/car.png';
 import together from './assets/together.png';
 import Footer from './components/Footer';
 import Accordion from './components/Accordino';
-import SmoothScrollComponent from './components/SmoothScrollComponent';
+import SmoothScrollComponent from './components/SmmothScrollComponent';
 import imagee from './assets/imagee.jpg';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <SmoothScrollComponent>
+    // <SmoothScrollComponent>
       <div>
         <TopBar onLanguageChange={handleLanguageChange} currentLanguage={language} />
         <Navbar />
@@ -70,7 +70,7 @@ function App() {
 
         <Footer />
       </div>
-    </SmoothScrollComponent>
+    // </SmoothScrollComponent>
   );
 }
 
