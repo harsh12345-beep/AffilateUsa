@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import ScrollSmoother from 'gsap/ScrollSmoother'
+import gsap from 'gsap';
+import { ScrollTrigger, ScrollSmoother } from 'gsap/all'; // Import everything
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
