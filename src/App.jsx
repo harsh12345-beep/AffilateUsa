@@ -7,8 +7,8 @@ import car from './assets/car.png';
 import together from './assets/together.png';
 import Footer from './components/Footer';
 import Accordion from './components/Accordino';
-import SmoothScrollProvider from './components/SmmothScrollComponent';
 import imagee from './assets/imagee.jpg';
+
 function App() {
   return (
 
