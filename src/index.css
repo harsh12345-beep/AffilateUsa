@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-#smooth-wrapper {
+/* #smooth-wrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -14,4 +14,4 @@
     position: relative;
     will-change: transform;
   }
-  
+   */

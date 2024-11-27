@@ -11,17 +11,11 @@ import SmoothScrollComponent from './components/SmmothScrollComponent';
 import imagee from './assets/imagee.jpg';
 
 function App() {
-  const [language, setLanguage] = React.useState('English');
 
-  const handleLanguageChange = (newLanguage) => {
-    setLanguage(newLanguage);
-    console.log('Language changed to:', newLanguage);
-  };
 
   return (
-    // <SmoothScrollComponent>
+     <SmoothScrollComponent>
       <div>
-        <TopBar onLanguageChange={handleLanguageChange} currentLanguage={language} />
         <Navbar />
         <HeroSection />
         <div className="flex flex-col sm:flex-row bg-gray-100 justify-between items-center sm:px-8 px-4 py-6">
@@ -70,7 +64,7 @@ function App() {
 
         <Footer />
       </div>
-    // </SmoothScrollComponent>
+     </SmoothScrollComponent>
   );
 }
 
