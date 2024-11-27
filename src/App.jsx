@@ -11,8 +11,8 @@ import SmoothScrollProvider from './components/SmmothScrollComponent';
 import imagee from './assets/imagee.jpg';
 function App() {
   return (
-    <SmoothScrollProvider>
-            <div>
+
+        <>
         <Navbar className="fade-in"/>
         <HeroSection className="fade-in"/>
         <div className="fade-in flex flex-col sm:flex-row bg-gray-100 justify-between items-center sm:px-8 px-4 py-6">
@@ -60,8 +60,8 @@ function App() {
         </div>
 
         <Footer className="fade-in"/>
-      </div>
-    </SmoothScrollProvider>
+      </>
+    
   );
 }
 
