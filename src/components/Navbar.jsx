@@ -4,14 +4,14 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800">
+    <nav className="bg-gradient-to-r from-[#1F3C88] to-[#1F3C88]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           {/* Mobile menu button */}
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#CDAA7D] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
             >
@@ -52,50 +52,23 @@ const Navbar = () => {
 
           {/* Logo (Centering in Mobile View) */}
           <div className="flex flex-1 sm:flex-none items-center justify-center sm:justify-start">
-            <div className="text-white text-xl font-bold">Affiliate For USA</div>
+            <div className="text-white text-xl font-bold">Vijayvergiya Law Group</div>
           </div>
 
           {/* Navigation Links for Desktop */}
           <div className="hidden sm:ml-6 sm:block">
             <div className="flex space-x-4">
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-600 hover:bg-gray-700"
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
-              >
-                About
-              </a>
-
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
-              >
-                Service
-              </a>
-
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
-              >
-                Blogs
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
-              >
-               Career
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-600 hover:text-white"
-              >
-                Contact
-              </a>
+              {["Home", "About", "Services", "Blogs", "Career", "Contact"].map(
+                (item, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="px-3 py-2 rounded-md text-sm font-medium text-white hover:bg-[#CDAA7D] hover:text-black"
+                  >
+                    {item}
+                  </a>
+                )
+              )}
             </div>
           </div>
         </div>
@@ -104,45 +77,18 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="sm:hidden">
-          <div className="bg-gray-800 text-white space-y-1 px-2 pt-2 pb-3">
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium bg-gray-600 hover:bg-gray-700"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600"
-            >
-              Services
-            </a>
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600"
-            >
-              Blogs
-            </a>
-
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600"
-            >
-              Career
-            </a>
-
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-600"
-            >
-              Contact
-            </a>
+          <div className="bg-[#1F3C88] text-white space-y-1 px-2 pt-2 pb-3">
+            {["Home", "About", "Services", "Blogs", "Career", "Contact"].map(
+              (item, index) => (
+                <a
+                  key={index}
+                  href="#"
+                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#CDAA7D] hover:text-black"
+                >
+                  {item}
+                </a>
+              )
+            )}
           </div>
         </div>
       )}
