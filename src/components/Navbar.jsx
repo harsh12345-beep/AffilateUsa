@@ -1,92 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 
   return (
-    // <nav className="bg-gradient-to-r from-[#1F3C88] to-[#1F3C88]">
-    //   <div className="container mx-auto flex items-center justify-between px-4 py-4">
-    //     {/* Logo */}
-    //     <div className="text-white text-xl font-bold">Vijayvergiya Law Group</div>
-
-    //     {/* Desktop Links */}
-    //     <div className="hidden sm:flex space-x-6">
-    //       {["Home", "About", "Services", "Blogs", "Career", "Contact"].map(
-    //         (item, index) => (
-    //           <a
-    //             key={index}
-    //             href="#"
-    //             className="text-white hover:text-[#CDAA7D] text-base font-medium"
-    //           >
-    //             {item}
-    //           </a>
-    //         )
-    //       )}
-    //     </div>
-
-    //     {/* Mobile Menu Button */}
-    //     <button
-    //       type="button"
-    //       className="sm:hidden text-white hover:text-[#CDAA7D]"
-    //       onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-    //       aria-expanded={isMobileMenuOpen}
-    //     >
-    //       <span className="sr-only">Open menu</span>
-    //       {isMobileMenuOpen ? (
-    //         <svg
-    //           className="w-6 h-6"
-    //           fill="none"
-    //           stroke="currentColor"
-    //           viewBox="0 0 24 24"
-    //           xmlns="http://www.w3.org/2000/svg"
-    //         >
-    //           <path
-    //             strokeLinecap="round"
-    //             strokeLinejoin="round"
-    //             strokeWidth={2}
-    //             d="M6 18L18 6M6 6l12 12"
-    //           />
-    //         </svg>
-    //       ) : (
-    //         <svg
-    //           className="w-6 h-6"
-    //           fill="none"
-    //           stroke="currentColor"
-    //           viewBox="0 0 24 24"
-    //           xmlns="http://www.w3.org/2000/svg"
-    //         >
-    //           <path
-    //             strokeLinecap="round"
-    //             strokeLinejoin="round"
-    //             strokeWidth={2}
-    //             d="M4 6h16M4 12h16m-7 6h7"
-    //           />
-    //         </svg>
-    //       )}
-    //     </button>
-    //   </div>
-
-    //   {/* Mobile Links */}
-    //   {isMobileMenuOpen && (
-    //     <div className="sm:hidden bg-[#1F3C88] text-white space-y-2 py-4 px-4">
-    //       {["Home", "About", "Services", "Blogs", "Career", "Contact"].map(
-    //         (item, index) => (
-    //           <a
-    //             key={index}
-    //             href="#"
-    //             className="block text-base font-medium hover:text-[#CDAA7D]"
-    //           >
-    //             {item}
-    //           </a>
-    //         )
-    //       )}
-    //     </div>
-    //   )}
-    // </nav>
-
-
-    
-
 
 
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
@@ -100,7 +17,7 @@ const Navbar = () => {
         <svg class="w-5 h-5 rounded-full me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900"><path fill="#b22234" d="M0 0h7410v3900H0z"/><path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff" stroke-width="300"/><path fill="#3c3b6e" d="M0 0h2964v2100H0z"/><g fill="#fff"><g id="d"><g id="c"><g id="e"><g id="b"><path id="a" d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"/><use xlink:href="#a" y="420"/><use xlink:href="#a" y="840"/><use xlink:href="#a" y="1260"/></g><use xlink:href="#a" y="1680"/></g><use xlink:href="#b" x="247" y="210"/></g><use xlink:href="#c" x="494"/></g><use xlink:href="#d" x="988"/><use xlink:href="#c" x="1976"/><use xlink:href="#e" x="2470"/></g></svg>
         English (US)
       </button>
-     
+    
       <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
         <ul class="py-2 font-medium" role="none">
           <li>
