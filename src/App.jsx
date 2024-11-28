@@ -1,70 +1,78 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import HeroSection from './components/Herosection';
-import Card from './components/Card';
-import bar from './assets/bar.png';
-import car from './assets/car.png';
-import together from './assets/together.png';
-import Footer from './components/Footer';
-import Accordion from './components/Accordino';
-import imagee from './assets/imagee.jpg';
+import React, { useState } from "react";
 
+const Navbar = () => {
+  const [language, setLanguage] = useState("English"); // Default language is English
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "hi", label: "Hindi" },
+  ];
 
-function App() {
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang.label);
+    // Add any language-specific actions here, such as updating an i18n library
+  };
+
   return (
+    <nav className="bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <a href="/" className="text-white text-xl font-bold">
+              MyApp
+            </a>
+          </div>
 
-        <>
-       
-        <Navbar />
-        <HeroSection />
-        <div className="  flex flex-col sm:flex-row bg-gray-100 justify-between items-center sm:px-8 px-4 py-6">
-          <div className="w-full sm:w-1/2">
-            <h1 className="text-3xl sm:text-4xl font-bold text-center sm:text-left px-4 sm:px-8 pt-4">
-              Who we are
-            </h1>
-            <div className="  px-4 sm:px-6 py-4 sm:py-8">
-              <p className="text-lg leading-relaxed text-gray-700 font-serif">
-                At <span className="font-bold text-fuchsia-900">Vijayvergiya Law Group</span>, we pride
-                ourselves on delivering exceptional legal services that extend beyond boundaries.
-              </p>
-              {/* More content */}
+          {/* Navigation Links */}
+          <div className="hidden md:flex space-x-8">
+            <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              Home
+            </a>
+            <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              About
+            </a>
+            <a href="#" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              Contact
+            </a>
+          </div>
+
+          {/* Language Dropdown */}
+          <div className="relative group">
+            <button
+              className="flex items-center bg-gray-700 text-white px-4 py-2 rounded-md focus:outline-none"
+            >
+              {language}
+              <svg
+                className="ml-2 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div className="absolute right-0 mt-2 bg-white rounded-md shadow-lg w-32 hidden group-hover:block">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => handleLanguageChange(lang)}
+                  className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200"
+                >
+                  {lang.label}
+                </button>
+              ))}
             </div>
           </div>
-          <div className="w-full sm:w-1/2 flex justify-center sm:justify-end mt-6 sm:mt-0">
-            <img className="  w-3/4 sm:w-2/3 rounded-lg" src={imagee} alt="Representation of collaboration" />
-          </div>
         </div>
-
-        <div className="  bg-slate-300 pt-8 ">
-          <h2 className="flex justify-center text-4xl font-semibold font-serif pt-6 tracking-wide">Our Values</h2>
-          <div className="flex sm:justify-evenly pt-4 sm:flex-row space-x-4 flex-col space-y-6 px:4 items-center pb-14">
-            <Card
-              image={car}
-              title="Client Centric"
-              text="At Vijayvergiya Law Group, we adopt a client-centric approach. Our commitment tailored legal solutions."
-            />
-            <Card
-              image={together}
-              title="Expert Opinion"
-              text="When it comes to immigrating to the United States, our clients can rely on the proficient viewpoint."
-            />
-            <Card
-              image={bar}
-              title="Speed and Agility"
-              text="Vijayvergiya Law Group amalgamates celerity and dexterity to furnish proficient legal remedies."
-            />
-          </div>
-        </div>
-
-        <div className="bg-[#EFEAE3] pt-20  ">
-          <h2 className="flex justify-center text-4xl font-semibold font-serif pt-6 tracking-wide pb-8">Why Us</h2>
-          <Accordion />
-        </div>
-
-        <Footer/>
-      </>
-    
+      </div>
+    </nav>
   );
-}
+};
 
-export default App;
+export default Navbar;
